@@ -41,6 +41,18 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  --color-primary-50: #f3faf9;
+  --color-primary-100: #d8efed;
+  --color-primary-200: #b0dfdc;
+  --color-primary-300: #80c8c5;
+  --color-primary-400: #56abaa;
+  --color-primary-500: #368081;
+  --color-primary-600: #2e7173;
+  --color-primary-700: #285a5d;
+  --color-primary-800: #24484b;
+  --color-primary-900: #213f40;
+  --color-primary-950: #0f2124;
 }
 
 :root {
@@ -51,7 +63,7 @@
   --card-foreground: oklch(0.141 0.005 285.823);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.21 0.006 285.885);
+  --primary: #368081;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.967 0.001 286.375);
   --secondary-foreground: oklch(0.21 0.006 285.885);
@@ -118,5 +130,15 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-2xl mx-auto;
+  }
+  .underline {
+    /* set higher underline */
+    @apply underline decoration-4 decoration-primary-400/20 hover:decoration-primary-400/60 underline-offset-1;
   }
 }
