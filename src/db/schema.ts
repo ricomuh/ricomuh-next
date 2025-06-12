@@ -10,6 +10,11 @@ import {
 
 export const projectsTable = pgTable("projects", {
   uuid: uuid("uuid").primaryKey().defaultRandom(),
+  type: varchar("type", {
+    enum: ["web", "mobile", "desktop", "game"],
+  })
+    .notNull()
+    .default("game"),
   name: varchar("name").notNull(),
   slug: varchar("slug").notNull().unique(),
   url: varchar("url"),
@@ -33,4 +38,21 @@ export const postsTable = pgTable("posts", {
   body: text("body").notNull(),
   createdAt: timestamp("createdAt").notNull().defaultNow(),
   updatedAt: timestamp("updatedAt").$onUpdate(() => new Date()),
+});
+
+export const contactsTable = pgTable("contacts", {
+  uuid: uuid("uuid").primaryKey().defaultRandom(),
+  name: varchar("name").notNull(),
+  subject: varchar("subject").notNull(),
+  email: varchar("email").notNull().unique(),
+  message: text("message").notNull(),
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
+  updatedAt: timestamp("updatedAt").$onUpdate(() => new Date()),
+});
+
+export const guestsignsTable = pgTable("guest_signs", {
+  uuid: uuid("uuid").primaryKey().defaultRandom(),
+  name: varchar("name").notNull(),
+  message: text("message").notNull(),
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
 });

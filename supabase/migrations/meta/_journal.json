@@ -5,36 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1749479526997,
-      "tag": "0000_dizzy_ultron",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1749479794542,
-      "tag": "0001_violet_wonder_man",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1749483943018,
-      "tag": "0002_friendly_nextwave",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "7",
-      "when": 1749484259676,
-      "tag": "0003_dazzling_rawhide_kid",
-      "breakpoints": true
-    },
-    {
-      "idx": 4,
-      "version": "7",
-      "when": 1749484295909,
-      "tag": "0004_panoramic_marauders",
+      "when": 1749739227645,
+      "tag": "0000_romantic_thunderbird",
       "breakpoints": true
     }
   ]
