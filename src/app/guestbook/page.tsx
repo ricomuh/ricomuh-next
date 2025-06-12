@@ -38,7 +38,7 @@ export default async function GuestBookPage() {
         <ul className="space-y-4 w-full">
           {signs.map((sign) => (
             <li key={sign.uuid} className="flex justify-between items-center">
-              <div className="flex space-x-2">
+              <div className="flex space-x-2 w-full">
                 <p className="font-bold text-sm flex-shrink-0">{sign.name}</p>
                 <p className="text-sm text-gray-200 truncate">{sign.message}</p>
               </div>
