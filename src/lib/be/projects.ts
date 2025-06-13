@@ -31,6 +31,26 @@ export async function getProjects(page: number = 1): Promise<{
   };
 }
 
+export async function getAllProjects(): Promise<
+  Pick<
+    InferSelectModel<typeof projectsTable>,
+    "name" | "slug" | "featuredImageUrl" | "gridCols" | "gridRows"
+  >[]
+> {
+  const allProjects = await db
+    .select({
+      name: projectsTable.name,
+      slug: projectsTable.slug,
+      featuredImageUrl: projectsTable.featuredImageUrl,
+      gridCols: projectsTable.gridCols,
+      gridRows: projectsTable.gridRows,
+    })
+    .from(projectsTable)
+    .orderBy(desc(projectsTable.createdAt));
+
+  return allProjects;
+}
+
 export async function getRandomProjects(
   amount: number = 1
 ): Promise<

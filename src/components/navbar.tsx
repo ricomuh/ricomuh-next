@@ -13,7 +13,7 @@ export default function Navbar() {
 
   return (
     <div className="w-full flex justify-center items-center fixed top-3">
-      <nav className="border border-white/10 rounded-3xl px-4 flex justify-between space-x-2 items-center overflow-hidden">
+      <nav className="border border-white/10 bg-black/70 backdrop-blur rounded-3xl px-4 flex justify-between space-x-2 items-center overflow-hidden">
         <div>
           <Link href="/">
             <Image src="/logo.png" alt="Logo" width={40} height={40} />

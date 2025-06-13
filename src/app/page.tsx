@@ -7,6 +7,7 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
+import RandomProjects from "./random-projects";
 
 export default function Home() {
   const socialLinks = [
@@ -83,33 +84,36 @@ export default function Home() {
         </div>
       </section>
       {/* about me */}
-      <section className="mt-16 text-gray-300">
-        <h2 className="text-3xl font-bold mb-4">Wassup!</h2>
-        <p className="mb-4">
-          I&apos;m a generalist person who lives by making web and game
-          projects. I&apos;ve done all sorts of stuff—casual mobile games, VR/AR
-          apps, NFT websites, you name it!
-        </p>
-        <p className="mb-4">
-          Now, I&apos;m taking part in the company I co-founded,{" "}
-          <Link
-            className="text-orange-500 font-bold hover:text-orange-400 duration-200 underline"
-            target="_blank"
-            href="https://leolitgames.com"
-          >
-            Leolit Games
-          </Link>
-          . We&apos;ve launched several games on the Play Store, and we&apos;re
-          excitedly working on a new project that will soon be released on
-          Steam. We also do outsourcing for different projects, so if you want
-          to make your dream game happen,{" "}
-          <Link
-            className="text-primary-400 font-semibold hover:text-primary-300 duration-200 underline"
-            href="/contact"
-          >
-            hit me up!
-          </Link>
-        </p>
+      <section className="mt-16 text-gray-300 flex items-center">
+        <div className="flex flex-col w-1/2 pr-4">
+          <h2 className="text-3xl font-bold mb-4">Wassup!</h2>
+          <p className="mb-4">
+            I&apos;m a generalist person who lives by making web and game
+            projects. I&apos;ve done all sorts of stuff—casual mobile games,
+            VR/AR apps, NFT websites, you name it!
+          </p>
+          <p className="mb-4">
+            Now, I&apos;m taking part in the company I co-founded,{" "}
+            <Link
+              className="text-orange-500 font-bold hover:text-orange-400 duration-200 underline"
+              target="_blank"
+              href="https://leolitgames.com"
+            >
+              Leolit Games
+            </Link>
+            . We&apos;ve launched several games on the Play Store, and
+            we&apos;re excitedly working on a new project that will soon be
+            released on Steam. We also do outsourcing for different projects, so
+            if you want to make your dream game happen,{" "}
+            <Link
+              className="text-primary-400 font-semibold hover:text-primary-300 duration-200 underline"
+              href="/contact"
+            >
+              hit me up!
+            </Link>
+          </p>
+        </div>
+        <RandomProjects />
       </section>
     </div>
   );

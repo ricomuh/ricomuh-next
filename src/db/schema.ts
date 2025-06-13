@@ -19,6 +19,7 @@ export const projectsTable = pgTable("projects", {
   slug: varchar("slug").notNull().unique(),
   url: varchar("url"),
   featuredImageUrl: varchar("featuredImageUrl").notNull(),
+  videoEmbedUrl: varchar("videoEmbedUrl"),
   gridCols: integer("gridCols").notNull().default(1),
   gridRows: integer("gridRows").notNull().default(1),
   imageUrls: json("imageUrls").$type<string[]>(),
