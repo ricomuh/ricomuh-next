@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -8,6 +8,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
 import RandomProjects from "./random-projects";
+import RandomArticles from "./random-articles";
 
 export default function Home() {
   const socialLinks = [
@@ -34,12 +35,19 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen max-w-3xl mx-auto px-4">
       {/* hero */}
-      <section className="flex justify-between items-center">
+      <section className="flex justify-between items-center mt-40 mb-20">
         <div className="rounded-full p-0.5 bg-gradient-to-tl from-primary-400 via-gray-400 to-indigo-400">
-          <Avatar className="w-52 h-52">
+          {/* <Avatar className="w-52 h-52">
             <AvatarImage src="/media/me.png" alt="Profile Picture" />
             <AvatarFallback>RM</AvatarFallback>
-          </Avatar>
+          </Avatar> */}
+          <Image
+            src="/media/me.png"
+            alt="Profile Picture"
+            width={208}
+            height={208}
+            className="w-52 h-52 rounded-full object-cover border-2 border-gray-200"
+          />
         </div>
         <div className="ml-8 relative">
           <h1 className="text-4xl font-medium text-gray-200">
@@ -115,6 +123,8 @@ export default function Home() {
         </div>
         <RandomProjects />
       </section>
+      {/* random articles */}
+      <RandomArticles />
     </div>
   );
 }

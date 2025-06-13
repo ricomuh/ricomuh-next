@@ -15,6 +15,13 @@
       "when": 1749802191941,
       "tag": "0001_amazing_cable",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1749802342307,
+      "tag": "0002_parallel_the_anarchist",
+      "breakpoints": true
     }
   ]
 }

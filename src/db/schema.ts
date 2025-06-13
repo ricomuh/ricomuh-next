@@ -62,7 +62,7 @@ export const articlesTable = pgTable("articles", {
   uuid: uuid("uuid").primaryKey().defaultRandom(),
   title: varchar("title").notNull(),
   url: varchar("url").notNull().unique(),
-  imageUrl: varchar("imageUrl"),
-  website: varchar("website"),
-  description: text("description").notNull(),
+  imageUrl: varchar("imageUrl").notNull(),
+  website: varchar("website").notNull(),
+  description: text("description"),
 });

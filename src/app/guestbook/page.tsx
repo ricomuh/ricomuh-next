@@ -2,6 +2,7 @@ import { auth, signIn } from "@/auth";
 import { getGuestSigns } from "@/lib/be/guests";
 import GuestBookForm from "./form";
 import { Button } from "@/components/ui/button";
+import { Github } from "lucide-react";
 
 export default async function GuestBookPage() {
   const session = await auth();
@@ -19,7 +20,12 @@ export default async function GuestBookPage() {
           }}
         >
           {/* <button type="submit" className="">Sign in with GitHub</button> */}
-          <Button type="submit" variant="outline" className="cursor-pointer">
+          <Button
+            type="submit"
+            variant="outline"
+            className="cursor-pointer flex items-center"
+          >
+            <Github className="h-4 w-4" />
             Sign in with GitHub
           </Button>
         </form>
