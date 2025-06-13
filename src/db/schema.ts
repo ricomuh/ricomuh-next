@@ -57,3 +57,12 @@ export const guestsignsTable = pgTable("guest_signs", {
   message: text("message").notNull(),
   createdAt: timestamp("createdAt").notNull().defaultNow(),
 });
+
+export const articlesTable = pgTable("articles", {
+  uuid: uuid("uuid").primaryKey().defaultRandom(),
+  title: varchar("title").notNull(),
+  url: varchar("url").notNull().unique(),
+  imageUrl: varchar("imageUrl"),
+  website: varchar("website"),
+  description: text("description").notNull(),
+});

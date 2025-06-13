@@ -8,6 +8,13 @@
       "when": 1749739227645,
       "tag": "0000_romantic_thunderbird",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1749802191941,
+      "tag": "0001_amazing_cable",
+      "breakpoints": true
     }
   ]
 }
