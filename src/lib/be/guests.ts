@@ -1,28 +1,51 @@
+"use server";
 import { auth } from "@/auth";
 import { db } from "@/db";
 import { guestsignsTable } from "@/db/schema";
 import { desc, InferSelectModel } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
+// import { revalidatePath } from "next/cache";
 import { z } from "zod/v4";
 
-export async function createSign(formData: FormData) {
-  "use server";
+const GuestSignSchema = z.object({
+  name: z.string().min(2).max(100),
+  message: z.string().min(2).max(500).trim(),
+});
+
+export async function createSign(
+  _state,
+  formData: FormData
+): Promise<{
+  errors?: Record<string, string[]> | null | string;
+}> {
   const session = await auth();
 
   const name = session?.user?.name || "Anonymous";
   const message = formData.get("message")?.toString().trim() || "";
 
-  const schema = z.object({
-    name: z.string().min(2).max(100),
-    message: z.string().min(2).max(500),
-  });
-
-  const result = schema.safeParse({ name, message });
+  const result = GuestSignSchema.safeParse({ name, message });
   if (!result.success) {
-    throw new Error("Invalid input");
+    // throw new Error("Invalid input");
+    return {
+      errors: result.error.flatten().fieldErrors,
+    };
   }
 
-  await sign(name, message);
+  const signResult = await sign(name, message);
+
+  if (!signResult.success) {
+    return {
+      errors: {
+        message: [signResult.error || "Failed to sign guest book"],
+      },
+    };
+  }
+
+  revalidatePath("/guestbook");
+
+  return {
+    errors: null,
+  };
 }
 
 export async function sign(
@@ -42,7 +65,7 @@ export async function sign(
       throw new Error("Failed to insert guest sign into the database");
     }
 
-    await revalidatePath("/guestbook");
+    // await revalidatePath("/guestbook");
     return { success: true };
   } catch (error) {
     console.error("Error signing guest book:", error);
