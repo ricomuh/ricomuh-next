@@ -13,7 +13,7 @@ const GuestSignSchema = z.object({
 });
 
 export async function createSign(
-  _state,
+  _state: unknown,
   formData: FormData
 ): Promise<{
   errors?: Record<string, string[]> | null | string;
