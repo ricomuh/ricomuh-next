@@ -4,6 +4,19 @@ import Image from "next/image";
 import Link from "next/link";
 import ProjectsFilter from "./projects-filter";
 
+export const metadata = {
+  title: "Projects",
+  description: "A collection of my projects",
+  keywords: [
+    "projects",
+    "portfolio",
+    "software engineer",
+    "ricomuh",
+    "Rico Muhammad Nashrullah",
+    "Rico Nashrullah",
+  ],
+};
+
 export default async function Projects({
   searchParams,
 }: {

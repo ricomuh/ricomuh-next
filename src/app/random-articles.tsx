@@ -29,7 +29,7 @@ export default async function RandomArticles() {
                   rel="noopener noreferrer"
                   className="w-full h-full"
                 >
-                  <div className="flex relative w-full aspect-square overflow-hidden rounded-lg group hover:ring-3 hover:ring-primary-400/50 duration-200">
+                  <div className="flex relative w-full aspect-video md:aspect-square overflow-hidden rounded-lg group hover:ring-3 hover:ring-primary-400/50 duration-200">
                     <Image
                       src={article.imageUrl}
                       alt={article.title}
@@ -50,7 +50,7 @@ export default async function RandomArticles() {
               </div>
             </TooltipTrigger>
             <TooltipContent>
-              <p>{previewUrl(article.url)}</p>
+              <p>{article.url && previewUrl(article.url)}</p>
             </TooltipContent>
           </Tooltip>
         ))}

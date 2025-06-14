@@ -14,6 +14,24 @@ import { Button } from "@/components/ui/button";
 import { previewUrl } from "@/lib/strings";
 import { Link2 } from "lucide-react";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const { slug } = params;
+  const project = await getProjectBySlug(slug);
+
+  if (!project) {
+    notFound();
+  }
+
+  return {
+    title: project.name,
+    description: project.description,
+  };
+}
+
 export default async function ProjectPage({
   params,
 }: {

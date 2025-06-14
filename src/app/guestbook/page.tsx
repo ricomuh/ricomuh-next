@@ -4,6 +4,19 @@ import GuestBookForm from "./form";
 import { Button } from "@/components/ui/button";
 import { Github } from "lucide-react";
 
+export const metadata = {
+  title: "Guest Book",
+  description: "Sign my guest book and leave a message!",
+  keywords: [
+    "guest book",
+    "sign guest book",
+    "leave a message",
+    "ricomuh",
+    "Rico Muhammad Nashrullah",
+    "Rico Nashrullah",
+  ],
+};
+
 export default async function GuestBookPage() {
   const session = await auth();
   const signs = await getGuestSigns(20);

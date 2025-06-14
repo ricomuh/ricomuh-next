@@ -10,6 +10,10 @@ import Image from "next/image";
 import RandomProjects from "./random-projects";
 import RandomArticles from "./random-articles";
 
+export const metadata = {
+  title: "home",
+};
+
 export default function Home() {
   const socialLinks = [
     {
