@@ -14,8 +14,8 @@ export default function ProjectsFilter() {
   const filters = [
     { value: "*", label: "All" },
     { value: "web", label: "Web" },
-    { value: "mobile", label: "Mobile" },
-    { value: "desktop", label: "Desktop" },
+    // { value: "mobile", label: "Mobile" },
+    // { value: "desktop", label: "Desktop" },
     { value: "game", label: "Game" },
   ];
 

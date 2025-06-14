@@ -17,12 +17,12 @@ export default async function RandomArticles() {
       <h2 className="text-2xl font-bold text-gray-200 mb-4 w-full">
         Articles About Me
       </h2>
-      <div className="flex">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {/* articles */}
         {articles.map((article) => (
           <Tooltip key={article.uuid}>
             <TooltipTrigger asChild>
-              <div className="w-1/3 p-2 flex flex-col items-center">
+              <div className="p-2 flex flex-col items-center">
                 <Link
                   href={article.url}
                   target="_blank"

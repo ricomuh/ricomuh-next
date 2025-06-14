@@ -35,12 +35,8 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen max-w-3xl mx-auto px-4">
       {/* hero */}
-      <section className="flex justify-between items-center mt-40 mb-20">
+      <section className="flex flex-col md:flex-row justify-center md:justify-between gap-10 md:gap-5 items-center mt-40 mb-20">
         <div className="rounded-full p-0.5 bg-gradient-to-tl from-primary-400 via-gray-400 to-indigo-400">
-          {/* <Avatar className="w-52 h-52">
-            <AvatarImage src="/media/me.png" alt="Profile Picture" />
-            <AvatarFallback>RM</AvatarFallback>
-          </Avatar> */}
           <Image
             src="/media/me.png"
             alt="Profile Picture"
@@ -49,7 +45,7 @@ export default function Home() {
             className="w-52 h-52 rounded-full object-cover border-2 border-gray-200"
           />
         </div>
-        <div className="ml-8 relative z-0">
+        <div className="md:ml-8 relative z-0">
           <h1 className="text-4xl font-medium text-gray-200">
             Hi, I&apos;m{" "}
             <span
@@ -72,7 +68,7 @@ export default function Home() {
               Leolit Games
             </Link>
           </p>
-          <div className="absolute right-10 top-16 translate-x-full">
+          <div className="absolute right-20 md:right-10 -bottom-5 md:top-16 translate-x-full">
             <Image src="/media/arrow.svg" alt="Arrow" width={47} height={34} />
             <p className="text-gray-400 origin-top -rotate-12">Check it out!</p>
           </div>
@@ -92,8 +88,8 @@ export default function Home() {
         </div>
       </section>
       {/* about me */}
-      <section className="mt-16 text-gray-300 flex items-center">
-        <div className="flex flex-col w-1/2 pr-4">
+      <section className="mt-16 text-gray-300 flex flex-col md:flex-row items-center">
+        <div className="flex flex-col w-full md:w-1/2 md:pr-4 mb-4 md:mb-0">
           <h2 className="text-3xl font-bold mb-4">Wassup!</h2>
           <p className="mb-4">
             I&apos;m a generalist person who lives by making web and game

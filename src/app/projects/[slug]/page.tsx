@@ -86,7 +86,7 @@ export default async function ProjectPage({
     );
   };
   return (
-    <section className="max-w-3xl mx-auto px-4 mt-20 mb-30">
+    <section className="max-w-3xl mx-auto px-4 mt-20 mb-30 overflow-hidden md:overflow-visible">
       {/* {project.imageUrls} */}
       <div className="flex">
         {Array.isArray(project.imageUrls) && project.imageUrls.length > 0 && (
@@ -109,8 +109,8 @@ export default async function ProjectPage({
         )}
       </div>
 
-      <div className="flex mt-10">
-        <div className="flex flex-col w-3/5">
+      <div className="flex flex-col md:flex-row mt-10">
+        <div className="flex flex-col w-full md:w-3/5">
           <Card className="p-1">
             <CardContent className="px-4 py-2">
               <h1 className="text-3xl font-bold text-gray-200 mb-2">
@@ -133,7 +133,7 @@ export default async function ProjectPage({
             </CardContent>
           </Card>
         </div>
-        <div className="flex flex-col w-2/5 ml-10">
+        <div className="flex flex-col w-full md:w-2/5 md:ml-10 mt-10 md:mt-0">
           <Card className="p-1 w-full">
             <CardContent className="px-4 py-2">
               {/* make a project details contains url, github url, technologies vertically */}

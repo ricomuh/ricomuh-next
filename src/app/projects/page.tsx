@@ -16,7 +16,7 @@ export default async function Projects({
   return (
     <div className="flex flex-col items-center justify-center min-h-screen max-w-3xl mx-auto px-4 mt-20 mb-30">
       <div className="flex justify-between items-center w-full mb-8">
-        <h1 className="text-4xl font-bold text-gray-200 mb-8">Projects</h1>
+        <h1 className="text-4xl font-bold text-gray-200">Projects</h1>
         <ProjectsFilter />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">

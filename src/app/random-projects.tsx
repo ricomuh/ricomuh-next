@@ -27,7 +27,7 @@ export default async function RandomProjects() {
   ];
 
   return (
-    <div className="relative w-1/2 h-36 flex justify-end items-end">
+    <div className="relative w-full md:w-1/2 h-36 flex justify-end items-end">
       {projects.map((project, index) => (
         <Tooltip key={project.slug}>
           <TooltipTrigger asChild>

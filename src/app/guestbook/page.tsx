@@ -6,7 +6,7 @@ import { Github } from "lucide-react";
 
 export default async function GuestBookPage() {
   const session = await auth();
-  const signs = await getGuestSigns(10);
+  const signs = await getGuestSigns(20);
 
   console.log("Session:", session);
 
@@ -36,11 +36,11 @@ export default async function GuestBookPage() {
   };
 
   return (
-    <div className="max-w-xl mx-auto px-4 mt-20">
+    <div className="max-w-xl mx-auto px-4 mt-20 mb-30">
       <h1 className="text-2xl font-bold mb-4">Guest Book</h1>
       <Form />
       <div className="mt-8">
-        <h2 className="text-xl font-semibold mb-4">Recent Signs</h2>
+        {/* <h2 className="text-xl font-semibold mb-4">Recent Signs</h2> */}
         <ul className="space-y-4 w-full">
           {signs.map((sign, index) => (
             <li
