@@ -4,7 +4,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { getRandomArticles } from "@/lib/be/articles";
-import limitWords from "@/lib/limit-words";
+import { limitWords } from "@/lib/strings";
 import Image from "next/image";
 import Link from "next/link";
 

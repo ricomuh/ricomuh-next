@@ -49,7 +49,7 @@ export default function Home() {
             className="w-52 h-52 rounded-full object-cover border-2 border-gray-200"
           />
         </div>
-        <div className="ml-8 relative">
+        <div className="ml-8 relative z-0">
           <h1 className="text-4xl font-medium text-gray-200">
             Hi, I&apos;m{" "}
             <span

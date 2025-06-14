@@ -34,7 +34,7 @@ export async function getProjects(page: number = 1): Promise<{
 export async function getAllProjects(): Promise<
   Pick<
     InferSelectModel<typeof projectsTable>,
-    "name" | "slug" | "featuredImageUrl" | "gridCols" | "gridRows"
+    "name" | "slug" | "featuredImageUrl" | "url"
   >[]
 > {
   const allProjects = await db
@@ -42,8 +42,7 @@ export async function getAllProjects(): Promise<
       name: projectsTable.name,
       slug: projectsTable.slug,
       featuredImageUrl: projectsTable.featuredImageUrl,
-      gridCols: projectsTable.gridCols,
-      gridRows: projectsTable.gridRows,
+      url: projectsTable.url,
     })
     .from(projectsTable)
     .orderBy(desc(projectsTable.createdAt));
