@@ -31,10 +31,12 @@ export async function getProjects(page: number = 1): Promise<{
   };
 }
 
-export async function getAllProjects(): Promise<
+export async function getAllProjects(
+  type?: "web" | "mobile" | "desktop" | "game"
+): Promise<
   Pick<
     InferSelectModel<typeof projectsTable>,
-    "name" | "slug" | "featuredImageUrl" | "url"
+    "name" | "slug" | "featuredImageUrl" | "url" | "type"
   >[]
 > {
   const allProjects = await db
@@ -43,8 +45,10 @@ export async function getAllProjects(): Promise<
       slug: projectsTable.slug,
       featuredImageUrl: projectsTable.featuredImageUrl,
       url: projectsTable.url,
+      type: projectsTable.type,
     })
     .from(projectsTable)
+    .where(type ? eq(projectsTable.type, type) : undefined)
     .orderBy(desc(projectsTable.createdAt));
 
   return allProjects;

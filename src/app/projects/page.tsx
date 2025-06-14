@@ -2,13 +2,23 @@ import { getAllProjects } from "@/lib/be/projects";
 import { previewUrl } from "@/lib/strings";
 import Image from "next/image";
 import Link from "next/link";
+import ProjectsFilter from "./projects-filter";
 
-export default async function Projects() {
-  const projects = await getAllProjects();
+export default async function Projects({
+  searchParams,
+}: {
+  searchParams?: Promise<{ type?: "web" | "mobile" | "desktop" | "game" }>;
+}) {
+  const params = await searchParams;
+  const type = params?.type;
+  const projects = await getAllProjects(type);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen max-w-3xl mx-auto px-4 mt-20 mb-30">
-      <h1 className="text-4xl font-bold text-gray-200 mb-8">Projects</h1>
+      <div className="flex justify-between items-center w-full mb-8">
+        <h1 className="text-4xl font-bold text-gray-200 mb-8">Projects</h1>
+        <ProjectsFilter />
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
         {projects.map((project) => (
           <Link key={project.slug} href={`/projects/${project.slug}`}>
