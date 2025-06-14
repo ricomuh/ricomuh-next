@@ -77,7 +77,7 @@ export async function getRandomProjects(
 
 export async function getProjectBySlug(
   slug: string
-): Promise<InferSelectModel<typeof projectsTable>> {
+): Promise<InferSelectModel<typeof projectsTable> | null> {
   const [project] = await db
     .select()
     .from(projectsTable)
@@ -85,7 +85,7 @@ export async function getProjectBySlug(
     .limit(1);
 
   if (!project) {
-    throw new Error("Project not found");
+    return null;
   }
 
   return project;

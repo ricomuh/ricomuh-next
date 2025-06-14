@@ -4,7 +4,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { getRandomArticles } from "@/lib/be/articles";
-import { limitWords } from "@/lib/strings";
+import { limitWords, previewUrl } from "@/lib/strings";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -50,7 +50,7 @@ export default async function RandomArticles() {
               </div>
             </TooltipTrigger>
             <TooltipContent>
-              <p>{article.website}</p>
+              <p>{previewUrl(article.url)}</p>
             </TooltipContent>
           </Tooltip>
         ))}
