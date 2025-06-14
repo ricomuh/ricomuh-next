@@ -1,11 +1,6 @@
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import ArticleCard from "@/components/article-card";
+import { Button } from "@/components/ui/button";
 import { getRandomArticles } from "@/lib/be/articles";
-import { limitWords, previewUrl } from "@/lib/strings";
-import Image from "next/image";
 import Link from "next/link";
 
 export default async function RandomArticles() {
@@ -14,45 +9,20 @@ export default async function RandomArticles() {
   return (
     <section className="flex flex-col mb-20 mt-10">
       {/* articles about me */}
-      <h2 className="text-2xl font-bold text-gray-200 mb-4 w-full">
-        Articles About Me
-      </h2>
+      <div className="flex justify-between">
+        <h2 className="text-2xl font-bold text-gray-200 mb-4 w-full">
+          Articles About Me
+        </h2>
+        <Button variant="link" asChild>
+          <Link href="/articles" className="text-primary-400 hover:underline">
+            See All
+          </Link>
+        </Button>
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {/* articles */}
         {articles.map((article) => (
-          <Tooltip key={article.uuid}>
-            <TooltipTrigger asChild>
-              <div className="p-2 flex flex-col items-center">
-                <Link
-                  href={article.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full h-full"
-                >
-                  <div className="flex relative w-full aspect-video md:aspect-square overflow-hidden rounded-lg group hover:ring-3 hover:ring-primary-400/50 duration-200">
-                    <Image
-                      src={article.imageUrl}
-                      alt={article.title}
-                      className="absolute inset-0 object-cover w-full h-full group-hover:scale-110 duration-200"
-                      width={400}
-                      height={400}
-                    />
-                    <div className="relative bg-gradient-to-t from-black/90 via-black/50 w-full h-full flex flex-col items-start justify-end p-2">
-                      <h3 className="text-base font-semibold text-left leading-tight">
-                        {limitWords(article.title, 10)}
-                      </h3>
-                      <p className="text-sm text-gray-300 mt-1 leading-tight">
-                        {limitWords(article.description!, 5)}
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>{article.url && previewUrl(article.url)}</p>
-            </TooltipContent>
-          </Tooltip>
+          <ArticleCard key={article.uuid} article={article} />
         ))}
       </div>
     </section>
