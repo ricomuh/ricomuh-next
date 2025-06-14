@@ -17,9 +17,9 @@ import { Link2 } from "lucide-react";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
   const project = await getProjectBySlug(slug);
 
   if (!project) {
