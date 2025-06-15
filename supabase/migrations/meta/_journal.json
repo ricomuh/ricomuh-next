@@ -22,6 +22,13 @@
       "when": 1749802342307,
       "tag": "0002_parallel_the_anarchist",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1749949821439,
+      "tag": "0003_complex_secret_warriors",
+      "breakpoints": true
     }
   ]
 }

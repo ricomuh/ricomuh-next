@@ -1,4 +1,5 @@
 import {
+  boolean,
   integer,
   json,
   pgTable,
@@ -18,6 +19,7 @@ export const projectsTable = pgTable("projects", {
   name: varchar("name").notNull(),
   slug: varchar("slug").notNull().unique(),
   url: varchar("url"),
+  featured: boolean("featured").notNull().default(false),
   featuredImageUrl: varchar("featuredImageUrl").notNull(),
   videoEmbedUrl: varchar("videoEmbedUrl"),
   gridCols: integer("gridCols").notNull().default(1),

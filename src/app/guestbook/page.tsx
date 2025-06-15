@@ -51,6 +51,10 @@ export default async function GuestBookPage() {
   return (
     <div className="max-w-xl mx-auto px-4 mt-20 mb-30">
       <h1 className="text-2xl font-bold mb-4">Guest Book</h1>
+      <p className="text-gray-400 mb-6 text-sm">
+        Leave a message in my guest book! Your message will be visible to
+        everyone. Come on, don&apos;t be shy! 😄
+      </p>
       <Form />
       <div className="mt-8">
         {/* <h2 className="text-xl font-semibold mb-4">Recent Signs</h2> */}
