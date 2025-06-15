@@ -59,20 +59,12 @@ export default async function GuestBookPage() {
       <div className="mt-8">
         {/* <h2 className="text-xl font-semibold mb-4">Recent Signs</h2> */}
         <ul className="space-y-4 w-full">
-          {signs.map((sign, index) => (
-            <li
-              key={sign.uuid}
-              className={`flex justify-between items-center ${
-                index % 2 === 0 ? "rotate-1" : "rotate-0"
-              } `}
-            >
-              <div className="flex space-x-2 w-full">
-                <p className="font-bold text-sm flex-shrink-0">{sign.name}</p>
+          {signs.map((sign) => (
+            <li key={sign.uuid} className={`flex justify-between items-center`}>
+              <div className="flex space-x-2 w-full flex-col">
+                <p className="font-bold text-xs flex-shrink-0">{sign.name}</p>
                 <p className="text-sm text-gray-200 truncate">{sign.message}</p>
               </div>
-              {/* <p className="text-sm text-gray-500">
-                {new Date(sign.createdAt).toLocaleString()}
-              </p> */}
             </li>
           ))}
         </ul>
