@@ -1,14 +1,11 @@
 import ArticleCard from "@/components/article-card";
-import { getAllArticles } from "@/lib/be/articles";
 
 export const metadata = {
   title: "Articles About Me",
   description: "A collection of articles about me and my work.",
 };
 
-export default async function ArticlesPage() {
-  const articles = await getAllArticles();
-
+export default async function Loading() {
   return (
     <section className="flex flex-col mt-20 mb-30 max-w-3xl mx-auto px-4">
       {/* articles about me */}
@@ -17,8 +14,8 @@ export default async function ArticlesPage() {
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {/* articles */}
-        {articles.map((article) => (
-          <ArticleCard key={article.uuid} article={article} loading={false} />
+        {Array.from({ length: 10 }).map((_, index) => (
+          <ArticleCard key={index} loading={true} />
         ))}
       </div>
     </section>

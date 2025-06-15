@@ -1,4 +1,3 @@
-import { getAllProjects } from "@/lib/be/projects";
 import ProjectsFilter from "./projects-filter";
 import ProjectCard from "@/components/project-card";
 
@@ -15,15 +14,7 @@ export const metadata = {
   ],
 };
 
-export default async function Projects({
-  searchParams,
-}: {
-  searchParams?: Promise<{ type?: "web" | "mobile" | "desktop" | "game" }>;
-}) {
-  const params = await searchParams;
-  const type = params?.type;
-  const projects = await getAllProjects(type);
-
+export default function Loading() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen max-w-3xl mx-auto px-4 mt-20 mb-30">
       <div className="flex justify-between items-center w-full mb-8">
@@ -31,8 +22,8 @@ export default async function Projects({
         <ProjectsFilter />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
-        {projects.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
+        {Array.from({ length: 10 }).map((_, index) => (
+          <ProjectCard key={index} loading={true} />
         ))}
       </div>
     </div>
