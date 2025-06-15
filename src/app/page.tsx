@@ -9,6 +9,7 @@ import {
 import Image from "next/image";
 import RandomProjects from "./random-projects";
 import RandomArticles from "./random-articles";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "home",
@@ -121,10 +122,14 @@ export default function Home() {
             </Link>
           </p>
         </div>
-        <RandomProjects />
+        <Suspense fallback={<RandomProjects loading={true} />}>
+          <RandomProjects />
+        </Suspense>
       </section>
       {/* random articles */}
-      <RandomArticles />
+      <Suspense fallback={<RandomArticles loading={true} />}>
+        <RandomArticles />
+      </Suspense>
     </div>
   );
 }

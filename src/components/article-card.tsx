@@ -5,11 +5,27 @@ import { limitWords, previewUrl } from "@/lib/strings";
 import { InferSelectModel } from "drizzle-orm";
 import { articlesTable } from "@/db/schema";
 
+type ArticleCardProps =
+  | { loading: true; article?: never }
+  | {
+      loading: false;
+      article: InferSelectModel<typeof articlesTable>;
+    };
+
 export default function ArticleCard({
+  loading = false,
   article,
-}: {
-  article: InferSelectModel<typeof articlesTable>;
-}) {
+}: ArticleCardProps) {
+  if (loading || !article) {
+    return (
+      <div className="p-2 flex flex-col items-center">
+        <div className="w-full h-full flex justify-center items-center bg-gray-200 animate-pulse rounded-lg">
+          <div className="w-full h-full aspect-video md:aspect-square" />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <Tooltip key={article.uuid}>
       <TooltipTrigger asChild>
