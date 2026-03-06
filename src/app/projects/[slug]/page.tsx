@@ -42,10 +42,10 @@ export async function generateMetadata({
       description: project.description,
       type: "article",
       url: `https://ricomuh.com/projects/${slug}`,
-      images: project.thumbnail
+      images: project.featuredImageUrl
         ? [
             {
-              url: project.thumbnail,
+              url: project.featuredImageUrl,
               width: 1200,
               height: 630,
               alt: project.name,
@@ -57,7 +57,7 @@ export async function generateMetadata({
       title: `${project.name} | ricomuh`,
       description: project.description,
       card: "summary_large_image",
-      images: project.thumbnail ? [project.thumbnail] : undefined,
+      images: project.featuredImageUrl ? [project.featuredImageUrl] : undefined,
     },
   };
 }
