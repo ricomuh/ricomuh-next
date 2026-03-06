@@ -6,15 +6,29 @@ import { Github } from "lucide-react";
 
 export const metadata = {
   title: "Guest Book",
-  description: "Sign my guest book and leave a message!",
+  description:
+    "Sign my guest book and leave a message for me. Connect with me and share your thoughts!",
   keywords: [
     "guest book",
     "sign guest book",
     "leave a message",
+    "contact",
     "ricomuh",
     "Rico Muhammad Nashrullah",
     "Rico Nashrullah",
   ],
+  openGraph: {
+    title: "Guest Book | ricomuh",
+    description:
+      "Sign my guest book and leave a message for me. Connect with me and share your thoughts!",
+    type: "website",
+    url: "https://ricomuh.com/guestbook",
+  },
+  twitter: {
+    title: "Guest Book | ricomuh",
+    description:
+      "Sign my guest book and leave a message for me. Connect with me and share your thoughts!",
+  },
 };
 
 export default async function GuestBookPage() {

@@ -5,15 +5,31 @@ import { Suspense } from "react";
 
 export const metadata = {
   title: "Projects",
-  description: "A collection of my projects",
+  description:
+    "Explore my portfolio of web, mobile, desktop, and game development projects. See what I've built and my technical expertise.",
   keywords: [
     "projects",
     "portfolio",
+    "web development",
+    "mobile development",
     "software engineer",
     "ricomuh",
     "Rico Muhammad Nashrullah",
     "Rico Nashrullah",
+    "case study",
   ],
+  openGraph: {
+    title: "Projects | ricomuh",
+    description:
+      "Explore my portfolio of web, mobile, desktop, and game development projects.",
+    type: "website",
+    url: "https://ricomuh.com/projects",
+  },
+  twitter: {
+    title: "Projects | ricomuh",
+    description:
+      "Explore my portfolio of web, mobile, desktop, and game development projects.",
+  },
 };
 
 export default async function Projects({

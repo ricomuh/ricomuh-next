@@ -29,6 +29,36 @@ export async function generateMetadata({
   return {
     title: project.name,
     description: project.description,
+    keywords: [
+      project.name,
+      "project",
+      "portfolio",
+      "case study",
+      project.type?.toLowerCase() || "development",
+      "ricomuh",
+    ],
+    openGraph: {
+      title: `${project.name} | ricomuh`,
+      description: project.description,
+      type: "article",
+      url: `https://ricomuh.com/projects/${slug}`,
+      images: project.thumbnail
+        ? [
+            {
+              url: project.thumbnail,
+              width: 1200,
+              height: 630,
+              alt: project.name,
+            },
+          ]
+        : undefined,
+    },
+    twitter: {
+      title: `${project.name} | ricomuh`,
+      description: project.description,
+      card: "summary_large_image",
+      images: project.thumbnail ? [project.thumbnail] : undefined,
+    },
   };
 }
 
@@ -54,15 +84,15 @@ export default async function ProjectPage({
     project.gridCols === project.gridRows
       ? "square"
       : project.gridCols > project.gridRows
-      ? "portrait"
-      : "landscape";
+        ? "portrait"
+        : "landscape";
 
   //   if the imageUrls.length is less than 3 and the orientation is portrait, then populate it with the imageUrls that are available
   const imageUrls = project.imageUrls ?? [];
   if (imageUrls.length < 5) {
     for (let i = imageUrls.length; i < 5; i++) {
       imageUrls.push(
-        imageUrls[i % imageUrls.length] || project.featuredImageUrl
+        imageUrls[i % imageUrls.length] || project.featuredImageUrl,
       );
     }
   }

@@ -19,16 +19,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ricomuh.com"),
   title: {
-    default: "ricomuh",
+    default: "ricomuh - Software Engineer & Portfolio",
     template: "%s | ricomuh",
   },
-  description: "just a personal website of a software engineer",
+  description:
+    "Personal website of Rico Muhammad Nashrullah, a software engineer specializing in web and mobile development. Explore my projects, articles, and portfolio.",
   keywords: [
     "ricomuh",
     "ricomuh.com",
     "personal website",
     "software engineer",
+    "web developer",
+    "mobile developer",
     "blog",
     "articles",
     "portfolio",
@@ -48,10 +52,47 @@ export const metadata: Metadata = {
       url: "https://ricomuh.com",
     },
   ],
+  creator: "Rico Muhammad Nashrullah",
+  publisher: "Rico Muhammad Nashrullah",
   openGraph: {
-    title: "ricomuh",
-    description: "just a personal website of a software engineer",
+    type: "website",
+    locale: "en_US",
     url: "https://ricomuh.com",
+    siteName: "ricomuh",
+    title: "ricomuh - Software Engineer & Portfolio",
+    description:
+      "Personal website of Rico Muhammad Nashrullah, a software engineer specializing in web and mobile development.",
+    images: [
+      {
+        url: "https://ricomuh.com/media/me.png",
+        width: 208,
+        height: 208,
+        alt: "Rico Muhammad Nashrullah",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ricomuh - Software Engineer & Portfolio",
+    description:
+      "Personal website of Rico Muhammad Nashrullah, a software engineer specializing in web and mobile development.",
+    creator: "@ricomuh_",
+    images: ["https://ricomuh.com/media/me.png"],
+  },
+  icons: {
+    icon: [{ url: "/icons/site.webmanifest", type: "image/webmanifest" }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
   },
 };
 

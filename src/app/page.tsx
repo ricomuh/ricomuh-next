@@ -12,7 +12,21 @@ import RandomArticles from "./random-articles";
 import { Suspense } from "react";
 
 export const metadata = {
-  title: "welcome to ricomuh.com",
+  title: "Welcome to ricomuh.com",
+  description:
+    "Discover my journey as a software engineer, explore my projects, read my articles, and connect with me. Welcome to my personal website!",
+  openGraph: {
+    title: "Welcome to ricomuh.com",
+    description:
+      "Discover my journey as a software engineer, explore my projects, read my articles, and connect with me.",
+    type: "website",
+    url: "https://ricomuh.com",
+  },
+  twitter: {
+    title: "Welcome to ricomuh.com",
+    description:
+      "Discover my journey as a software engineer, explore my projects, read my articles, and connect with me.",
+  },
 };
 
 export default function Home() {
