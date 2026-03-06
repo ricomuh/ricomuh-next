@@ -12,7 +12,7 @@ import RandomArticles from "./random-articles";
 import { Suspense } from "react";
 
 export const metadata = {
-  title: "home",
+  title: "welcome to ricomuh.com",
 };
 
 export default function Home() {
